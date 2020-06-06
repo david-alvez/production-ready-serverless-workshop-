@@ -45,8 +45,8 @@ functions:
           path: /restaurants/search
           method: post
           authorizer:
-            arn: arn:aws:cognito-idp:#{AWS::Region}:#{AWS::AccountId}:userpool/us-east-1_3ow5I35Kd
-            environment:
+            arn: arn:aws:cognito-idp:#{AWS::Region}:#{AWS::AccountId}:userpool/#{CognitoUserPool}
+            name: SearchRestaurantsAuthorizer
     environment:
       restaurants_table: !Ref RestaurantsTable
 
